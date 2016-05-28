@@ -1,55 +1,38 @@
-# Api-Telegram-bot
+# <p align="center">**وان هایپر : ربات هایپر ساز**
+<p align="center">**سورس رایگان و فارسی ساخت ربات هایپر ساز تلگرام**
+<p align="center">ساخته شده با ♥ در ایران
 
-A simple telegram-bot wtitten in LUA based on [file manager bot](https://github.com/Imandaneshi/file-manager-bot) & [lua-api-bot](https://github.com/pAyDaAr/lua-api-bot)
-
-You should have [lua](http://www.lua.org/) installed
-
-# Installation
-
+***
+####<p align="right">**: راهنمای نصب**
 
 ```bash
+# ابتدا با کد زیر بسته پیش نیاز زبان برنامه نویسی لوآ را نصب میکنیم
+sudo apt-get update
 sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev make unzip git redis-server g++ libjansson-dev libpython-dev expat libexpat1-dev
- 
-
-``` 
-`sudo apt-get install lua-socket` & `sudo apt-get install lua-sec`
-
-
-Clone the bot
-
-```
-git clone https://github.com/BeatBotTeam/Api-Telegram-Bot.git
-cd Api-Telegram-Bot
-
+sudo apt-get install lua-socket
+sudo apt-get install lua-sec
 ```
 
-Then install bot using
-
-`lua bot.lua`
-
-bot token in bot.lua (config part)
-
-
-
-```lua
-
-local bot_api_key = "" -- token
+```bash
+# توکن ربات را وارد میکنیم bot.lua سپس در فایل
+local bot_api_key = "محل قرارگیری توکن ربات" -- token
 local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
 local BASE_FOLDER = "" -- do not set this
 ```
 
-And enter your telegram-id in admins table in [bot.lua](https://github.com/beatbotteam/api-telegram-bot/blob/master/bot.lua#L19)
-```lua
-local var = false
-  local admins = {94746365}-- put your id here
-  for k,v in pairs(admins) do
-
+```bash
+# را نصب و اجرا میکنیم Bot سپس
+cd $HOME
+git clone https://github.com/amirhmz/OneHyper.git
+cd OneHyper
+lua bot.lua
 ```
 
-Save bot.lua
+***
 
-```
-bash launch.sh install && bash launch.sh
-``` 
+####<p align="right">**: ارتباط با ما**
+| Bot | Telegram Channel | Telegram Support | Email |
+|---------|--------|-------| ----- |
+| [Bot](https://telegram.me/OneHyperBot) | [Join](https://telegram.me/DarkTeam) | [AmirDark (Sudo)](http://telegram.me/AmirDark) :trollface: | [Email](mailto:amdark77@gmail.com) 
 
-for Start the bot
+####<p align="center">**♥ !لذت ببرید**
