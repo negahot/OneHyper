@@ -16,8 +16,6 @@ sudo apt-get install lua-sec
 ```bash
 # حالا سورس را کلون میزنیم
 git clone https://github.com/amirhmz/OneHyper.git
-cd OneHyper
-lua bot.lua
 ```
 
 ```bash
