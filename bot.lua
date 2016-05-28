@@ -212,7 +212,7 @@ function bot_run()
 
 	bot = bot.result
 
-	local bot_info = "Username = @"..bot.username.."\nName = "..bot.first_name.."\nId = "..bot.id.." \nBeatBot hyper bot :)\ntnx to @imandaneshi & @Unfriendly\neditor: @amirho3inf \nchannel : @BeatBot_Team"
+	local bot_info = "نام کاربری = @"..bot.username.."\nنام ربات = "..bot.first_name.."\nیوزر آی دی = "..bot.id.." \nسورس وان هایپر\nتشکر از : @imandaneshi & @Unfriendly\nسازندگان : @AmirDark @Pediw \nکانال : @DarkTeam"
 
 	print(bot_info)
 
@@ -262,7 +262,7 @@ function msg_processor(msg)
 
 elseif msg.text:match("^/[sS]tart") or msg.text:match("^/[Hh]elp") then
  sendMessage(msg.chat.id, start, true, false, true)
-  sendMessage(msg.chat.id, [[[ربات خودتونو بسازید :)](http://telegram.me/beatbot_team)]], true, false, true)
+  sendMessage(msg.chat.id, [[[ربات خودتو بساز :)](https://github.com/amirhmz/OneHyper)]], true, false, true)
 return end
 
 end
