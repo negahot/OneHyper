@@ -14,6 +14,13 @@ sudo apt-get install lua-sec
 ```
 
 ```bash
+# حالا سورس را کلون میزنیم
+git clone https://github.com/amirhmz/OneHyper.git
+cd OneHyper
+lua bot.lua
+```
+
+```bash
 # توکن ربات را وارد میکنیم bot.lua سپس در فایل
 local bot_api_key = "محل قرارگیری توکن ربات" -- token
 local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
@@ -21,13 +28,10 @@ local BASE_FOLDER = "" -- do not set this
 ```
 
 ```bash
-# را نصب و اجرا میکنیم Bot سپس
-cd $HOME
-git clone https://github.com/amirhmz/OneHyper.git
+# حالا ربات را اجرا میکنیم
 cd OneHyper
 lua bot.lua
 ```
-
 ***
 
 ####<p align="right">**: ارتباط با ما**
