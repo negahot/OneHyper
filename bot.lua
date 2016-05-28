@@ -5,14 +5,20 @@ URL = require('socket.url')
 JSON = require('dkjson')
 HTTPS = require('ssl.https')
 ----config----
-local bot_api_key = " "--توکن بوت را درون " قرار دهید --
+local bot_api_key = ""--توکن بوت را درون " قرار دهید --
 local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
 local BASE_FOLDER = ""
 local start = [[
-hi :)
+سلامـ 😊✋
+من وان هایپر هستم :)
 
-/hyper [`test`]
-- `test`
+به کمک من متن های تبلیغاتی
+هایپر دار ایجاد و شیر کنید 🤔
+
+📝 دستورات پایه :
+
+/hyper [test]
+- test
 
 /hyper [*test*]
 - *test*
@@ -21,31 +27,33 @@ hi :)
 - _test_
 
 /hyper [[text](url)](url)
-- [BeatBot](BeatBot.ir)
+- [OneHyper](OneHyper.com)
 
-*EXAMPLE*
+*🏵 مثال :*
 
-/hyper [`Hi`]
+/hyper [Hi]
 [*I'm a api bot* ]
-[_BeatBot Team created me_]
-[[BeatBot Channel](test)][(http://telegram.me/beatbot_team)]
+[_Dark Team created me_]
+[[Dark Team Channel](test)][(http://telegram.me/DarkTeam)]
 
-*RESULT*
+*🏵 نتیجه :*
 
-`Hi`
+Hi
 *I'm a api bot* 
-_BeatBot Team created me_
-[BeatBot Channel](http://telegram.me/beatbot_team)
+_Dark Team Team created me_
+[Dark Team Channel](http://telegram.me/DarkTeam)
 
-*OTHER*
 
-*sticker to photo*
-`just send a sticker`
+*📝 سایر دستورات :*
 
-*photo to sticker*
-`just send a photo`
+*🔸 ارسال استیکر برای من*
+🌋 تحویل به صورت تصویر
 
-_TNX TO USE ME :)_
+*🔸 ارسال تصویر برای من*
+🏙 تحویل به صورت استیکر
+
+
+_ساخته شده با ❤️ در 🇮🇷_
 ]] 
 
 -------
