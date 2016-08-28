@@ -262,7 +262,7 @@ function msg_processor(msg)
 
 elseif msg.text:match("^/[sS]tart") or msg.text:match("^/[Hh]elp") then
  sendMessage(msg.chat.id, start, true, false, true)
-  sendMessage(msg.chat.id, [[سلامـ 😊\n✋من وان هایپر هستم :)\nبه کمک من متن های تبلیغاتی\nهایپر دار ایجاد و شیر کنید 🤔\n📝 دستورات پایه :\n/hyper [test]\n- test\n/hyper [*test*]\n- *test*\n/hyper [_test_]\n- _test_\n/hyper [[text](url)](url)\n- [OneHyper](OneHyper.com)\n*🏵 مثال :*\n/hyper [Hi]\n[*I'm a api bot* ]\n[_Dark Team created me_]\n[[Dark Team Channel](test)][(http://telegram.me/DarkTeam)]\n*🏵 نتیجه :*\nHi\n*I'm a api bot* \n_Dark Team Team created me_\n[Dark Team Channel](http://telegram.me/DarkTeam)\n*📝 سایر دستورات :*\n*🔸 ارسال استیکر برای من*\n🌋 تحویل به صورت تصویر\n*🔸 ارسال تصویر برای من*\n🏙 تحویل به صورت استیکر\n_ساخته شده با ❤️ در 🇮🇷_]], true, false, true)
+  sendMessage(msg.chat.id, [[[ربات خودتو بساز :)](https://github.com/amirhmz/OneHyper)]], true, false, true)
 return end
 
 end
