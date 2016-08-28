@@ -5,7 +5,7 @@ URL = require('socket.url')
 JSON = require('dkjson')
 HTTPS = require('ssl.https')
 ----config----
-local bot_api_key = "211497450:AAHm_GdJXyQ5qZe5kyxAFZ6-fjSfu-jOSOM"--توکن بوت را درون " قرار دهید --
+local bot_api_key = "221980970:AAGK3eGzKs4PcREYNVmHFCZdzU_LK6lil40"--توکن بوت را درون " قرار دهید --
 local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
 local BASE_FOLDER = ""
 local start = [[
@@ -212,7 +212,7 @@ function bot_run()
 
 	bot = bot.result
 
-	local bot_info = "نام کاربری = @"..bot.username.."\nنام ربات = "..bot.first_name.."\nیوزر آی دی = "..bot.id.." \nسورس وان هایپر\nتشکر از : @imandaneshi & @Unfriendly\nسازندگان : @AmirDark @Pediw \nکانال : @DarkTeam"
+	local bot_info = "نام کاربری = @"..bot.username.."\nنام ربات = "..bot.first_name.."\nیوزر آی دی = "..bot.id.." \n"
 
 	print(bot_info)
 
