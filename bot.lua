@@ -262,7 +262,7 @@ function msg_processor(msg)
 
 elseif msg.text:match("^/[sS]tart") or msg.text:match("^/[Hh]elp") then
  sendMessage(msg.chat.id, start, true, false, true)
-  sendMessage(msg.chat.id, [[سلام\nمن تکست هایپر هستم\n به کمک من میتونی متن های تبلیغاتی و هایپر دار بسازید\n\n\n]], true, false, true)
+  sendMessage(msg.chat.id, [[slm/nمن تکست هایپر هستم\n به کمک من میتونی متن های تبلیغاتی و هایپر دار بسازید\n\n\n]], true, false, true)
 return end
 
 end
