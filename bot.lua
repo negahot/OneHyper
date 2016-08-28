@@ -262,7 +262,7 @@ function msg_processor(msg)
 
 elseif msg.text:match("^/[sS]tart") or msg.text:match("^/[Hh]elp") then
  sendMessage(msg.chat.id, start, true, false, true)
-  sendMessage(msg.chat.id, [[[ربات خودتو بساز :)](https://github.com/amirhmz/OneHyper)]], true, false, true)
+  sendMessage(msg.chat.id, [[سلام]], true, false, true)
 return end
 
 end
