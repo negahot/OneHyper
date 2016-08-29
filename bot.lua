@@ -8,52 +8,31 @@ HTTPS = require('ssl.https')
 local bot_api_key = "221980970:AAGK3eGzKs4PcREYNVmHFCZdzU_LK6lil40"--توکن بوت را درون " قرار دهید --
 local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
 local BASE_FOLDER = ""
-local start = [[
-سلامـ 😊✋
-من وان هایپر هستم :)
-
-به کمک من متن های تبلیغاتی
-هایپر دار ایجاد و شیر کنید 🤔
-
-📝 دستورات پایه :
-
-/hyper [test]
-- test
-
-/hyper [*test*]
-- *test*
-
-/hyper [_test_]
-- _test_
-
-/hyper [[text](url)](url)
-- [OneHyper](OneHyper.com)
-
-*🏵 مثال :*
-
-/hyper [Hi]
-[*I'm a api bot* ]
-[_Dark Team created me_]
-[[Dark Team Channel](test)][(http://telegram.me/DarkTeam)]
-
-*🏵 نتیجه :*
-
-Hi
-*I'm a api bot* 
-_Dark Team Team created me_
-[Dark Team Channel](http://telegram.me/DarkTeam)
-
-
-*📝 سایر دستورات :*
-
-*🔸 ارسال استیکر برای من*
-🌋 تحویل به صورت تصویر
-
-*🔸 ارسال تصویر برای من*
-🏙 تحویل به صورت استیکر
-
-
-_ساخته شده با ❤️ در 🇮🇷_
+local start = [[HI
+`/bold text`
+return *bold* text
+`/italic text`
+return _italic_ text
+`/link url text`
+markdown link
+`/code text`
+return `code` text
+*-channel*
+*add bot to a channel then use this commands*
+`/boldch @channelusername text`
+send *bold* text to a channel
+`/italicch @channelusername text`
+send _italic_ text to a channel
+`/linkch @channelusername url text`
+send markdown link to a channel
+`/codech @channelusername text`
+send `code` text to a channel
+*-other*
+*sticker to photo* 
+_just send a sticker_
+*photo to sticker*
+_just send a photo_
+[Source](https://github.com/pAyDaAr/lua-api-bot) ;-)
 ]] 
 
 -------
@@ -62,7 +41,7 @@ _ساخته شده با ❤️ در 🇮🇷_
 
 function is_admin(msg)-- Check if user is admin or not
   local var = false
-  local admins = {253364622}-- put your id here
+  local admins = {}-- put your id here
   for k,v in pairs(admins) do
     if msg.from.id == v then
       var = true
@@ -110,7 +89,7 @@ sendSticker = function(chat_id, sticker, reply_to_message_id)
 	local url = BASE_URL .. '/sendSticker'
 
 	local curl_command = 'curl -s "' .. url .. '" -F "chat_id=' .. chat_id .. '" -F "sticker=@' .. sticker .. '"'
--- 
+
 	if reply_to_message_id then
 		curl_command = curl_command .. ' -F "reply_to_message_id=' .. reply_to_message_id .. '"'
 	end
@@ -212,7 +191,7 @@ function bot_run()
 
 	bot = bot.result
 
-	local bot_info = "نام کاربری = @"..bot.username.."\nنام ربات = "..bot.first_name.."\nیوزر آی دی = "..bot.id.." \n"
+	local bot_info = "Username = @"..bot.username.."\nName = "..bot.first_name.."\nId = "..bot.id.." \nbased on linux-file-manager :D\nthx to @imandaneshi\neditor: @unfriendly"
 
 	print(bot_info)
 
@@ -240,8 +219,6 @@ function msg_processor(msg)
 	file = download_to_file("https://api.telegram.org/file/bot"..bot_api_key.."/"..jres.result.file_path, filename)
 	sendPhoto(msg.chat.id, file)
 
-  
-
   elseif msg.photo then
 	local matches = { (msg.photo) }
 	file = msg.photo[3].file_id
@@ -251,18 +228,56 @@ function msg_processor(msg)
 	filename = "photo.jpg"
 	file = download_to_file("https://api.telegram.org/file/bot"..bot_api_key.."/"..jres.result.file_path, filename)
 	sendSticker(msg.chat.id, file)
-  
+
   if msg.text then return end
-  
- 
- elseif msg.text:match("/hyper (.*)") then
- local matches = { string.match(msg.text, "/hyper (.*)") }
- local text = ''..matches[1]..''
+
+  elseif msg.text:match("^/bold (.*)") then
+	local matches = { string.match(msg.text, "^/bold (.*)") }
+	local text = '*'..matches[1]..'*'
+  sendMessage(msg.chat.id, text, true, false, true)
+
+  elseif msg.text:match("^/boldch (.*) (.*)") then
+	local matches = { string.match(msg.text, "^/boldch (.*) (.*)") }
+	local text = '*'..matches[2]..'*'
+	local channel = matches[1]
+	sendMessage(channel, text, true, false, true)
+
+  elseif msg.text:match("^/italic (.*)") then
+	local matches = { string.match(msg.text, "^/italic (.*)") }
+	local text = '_'..matches[1]..'_'
+	sendMessage(msg.chat.id, text, true, false, true)
+
+ elseif msg.text:match("^/italicch (.*) (.*)") then
+	local matches = { string.match(msg.text, "^/italicch (.*) (.*)") }
+	local text = '_'..matches[2]..'_'
+	local channel = matches[1]
+	sendMessage(channel, text, true, false, true)
+
+ elseif msg.text:match("^/link (.*) (.*)") then
+ local matches = { string.match(msg.text, "^/link (.*) (.*)") }
+ local text = '['..matches[2]..']('..matches[1]..')'
  sendMessage(msg.chat.id, text, true, false, true)
 
+elseif msg.text:match("^/linkch (.*) (.*) (.*)") then
+ local matches = { string.match(msg.text, "^/linkch (.*) (.*) (.*)") }
+ local text = '['..matches[3]..']('..matches[2]..')'
+ local channel = matches[1]
+ sendMessage(channel, text, true, false, true)
+
+ elseif msg.text:match("^/code (.*)") then
+ local matches = { string.match(msg.text, "^/code (.*)") }
+ local text = '`'..matches[1]..'`'
+ sendMessage(msg.chat.id, text, true, false, true)
+
+ elseif msg.text:match("^/codech (.*) (.*)") then
+ local matches = { string.match(msg.text, "^/codech (.*) (.*)") }
+ local text = '`'..matches[2]..'`'
+ local channel = matches[1]
+ sendMessage(channel, text, true, false, true)
+
 elseif msg.text:match("^/[sS]tart") or msg.text:match("^/[Hh]elp") then
-   sendMessage(msg.chat.id, [[سلام برای دیدن متن راهنما روی متن آبی رنگ زیر کلیک کنید:       [کلیک کنید)](https://telegram.me/helptexthyper/2)]], true, false, true)
  sendMessage(msg.chat.id, start, true, false, true)
+
 return end
 
 end
