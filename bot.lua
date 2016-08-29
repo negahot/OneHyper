@@ -261,6 +261,7 @@ function msg_processor(msg)
  sendMessage(msg.chat.id, text, true, false, true)
 
 elseif msg.text:match("^/[sS]tart") or msg.text:match("^/[Hh]elp") then
+   sendMessage(msg.chat.id, [[سلام برای دیدن متن راهنما روی متن آبی رنگ زیر کلیک کنید:       [کلیک کنید)](https://telegram.me/helptexthyper/2)]], true, false, true)
  sendMessage(msg.chat.id, start, true, false, true)
 return end
 
